@@ -11,6 +11,8 @@ namespace PunApi
         {
             // Serviços e configuração da API da Web
 
+            config.EnableCors();
+
             // Rotas da API da Web
             config.MapHttpAttributeRoutes();
 

@@ -4,10 +4,12 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
+using System.Web.Http.Cors;
 using PunDataAccess;
 
 namespace PunApi.Controllers
 {
+    [EnableCors(origins: "https://punapi.azurewebsites.net", headers: "*", methods: "*")]
     public class PunController : ApiController
     {
         public IEnumerable<Pun> Get()
