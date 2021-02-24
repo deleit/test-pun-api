@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web.Http;
+using System.Web.Http.Cors;
 
 namespace PunApi
 {
@@ -11,7 +12,8 @@ namespace PunApi
         {
             // Serviços e configuração da API da Web
 
-            config.EnableCors();
+            var cors = new EnableCorsAttribute("http://punapi.azurewebsites.net", "*", "*");
+            config.EnableCors(cors);
 
             // Rotas da API da Web
             config.MapHttpAttributeRoutes();
